@@ -78,4 +78,42 @@ public class Servicos {
         System.out.println();
     }
 
+    // Função Devolver Livro
+    public void devolverLivro(ArrayList<Livro> livros, int id){
+        for (Livro livro : livros) {
+            if (livro.getId() == id) {
+                if (!livro.getDisponibilidade()) {
+                    livro.setDisponibilidade(true);
+                    System.out.println();
+                    System.out.println("Livro devolvido com Sucesso: " + livro.getTitulo());
+                    System.out.println();
+                } else {
+                    System.out.println();
+                    System.out.println("Este livro ja foi devolvido ou não foi Emprestado!");
+                    System.out.println();
+                }
+                return;
+            }
+        }
+        System.out.println();
+        System.out.println("Livro com ID " + id + " não encontrado.");
+        System.out.println();
+    }
+
+    // Função Remover Livro
+    public void removerLivro(ArrayList<Livro> livros, int id) {
+        for (int i = 0; i < livros.size(); i++) {
+            if (livros.get(i).getId() == id) {
+                System.out.println();
+                System.out.println("Livro removido com Sucesso: " + livros.get(i).getTitulo());
+                System.out.println();
+                livros.remove(i);
+                return;
+            }
+        }
+        System.out.println();
+        System.out.println("Livro com o ID: " + id + "não encontrado.");
+        System.out.println();
+    }
+
 }

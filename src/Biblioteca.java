@@ -29,6 +29,16 @@ public class Biblioteca {
                     id_livro = scanner.nextInt();
                     servicos.emprestarLivro(livros, id_livro);
                     break;
+                case 4:
+                    System.out.println("Digite o ID do Livro que deseja devolver:");
+                    id_livro = scanner.nextInt();
+                    servicos.devolverLivro(livros, id_livro);
+                    break;
+                case 5:
+                    System.out.println("Digite o ID do Livro que deseja remover:");
+                    id_livro = scanner.nextInt();
+                    servicos.removerLivro(livros, id_livro);
+                    break;
                 case 6:
                     parar = true;
                     System.out.println("Encerrando!");
